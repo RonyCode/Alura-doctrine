@@ -1,8 +1,14 @@
 <?php
 
+use Alura\Doctrine\Entity\Aluno;
 use Alura\Doctrine\Helper\EntityManagerFactory;
 
 require_once __DIR__ . '/vendor/autoload.php';
+
+$aluno = new Aluno();
+$aluno->setName('Rony Anderson');
 $entityManagerFactory = new EntityManagerFactory();
 $entityManager = $entityManagerFactory->getEntityManager();
-var_dump($entityManager->getConnection());
+
+$entityManager->persist($aluno);
+$entityManager->flush();

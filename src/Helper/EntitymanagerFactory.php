@@ -2,14 +2,12 @@
 
 namespace Alura\Doctrine\Helper;
 
-use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Tools\Setup;
 
 class EntityManagerFactory
 {
-    /** @return \Doctrine\ORM\EntityManagerInterface*/
-
     public function getEntityManager(): EntityManagerInterface
     {
         $rootDir = __DIR__ . '/../..';
