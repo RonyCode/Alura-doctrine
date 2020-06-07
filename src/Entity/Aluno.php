@@ -72,7 +72,9 @@ class Aluno
         $curso->addAluno($this);
         return $this;
     }
-
+    /**
+     * @return Curso[]
+     */
     public function getCursos(): Collection
     {
         return $this->cursos;
