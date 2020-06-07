@@ -8,11 +8,10 @@ require_once __DIR__ . '../../vendor/autoload.php';
 $entityManagerFactory = new EntityManagerFactory();
 $entityManager = $entityManagerFactory->getEntityManager();
 
-$alunoRepository = $entityManager->getRepository(ALuno::class);
-/**
- * @var Aluno[] $alunoList */
-$alunoList = $alunoRepository->findALl();
+$id = $argv[1];
+$novoNome = $argv[2];
 
-foreach ($alunoList as $aluno) {
-    echo "ID = {$aluno->getId()}\nNome = {$aluno->getName()}\n\n";
-}
+$aluno = $entityManager->find(Aluno::class, $id);
+$aluno->setName($novoNome);
+
+$entityManager->flush();
