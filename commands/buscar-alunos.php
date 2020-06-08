@@ -10,7 +10,7 @@ $entityManagerFactory = new EntityManagerFactory();
 $entityManager = $entityManagerFactory->getEntityManager();
 
 $qdl =
-    "SELECT aluno FROM Alura\\Doctrine\\Entity\Aluno aluno WHERE aluno.id =1 OR aluno.name = 'rony'";
+    "SELECT aluno FROM Alura\\Doctrine\\Entity\Aluno aluno WHERE aluno.id =1 OR aluno.name ='Rony'";
 $query = $entityManager->createQuery($qdl);
 $alunoList = $query->getResult();
 

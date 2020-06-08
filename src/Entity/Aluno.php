@@ -21,7 +21,7 @@ class Aluno
      */
     private string $name;
     /**
-     * @OneToMany(targetEntity="Telefone", mappedBy="aluno", cascade={"persist", "remove"})
+     * @OneToMany(targetEntity="Telefone", mappedBy="aluno", cascade={"remove", "persist"}, fetch="EAGER")
      */
     private $telefones;
     /**
@@ -68,6 +68,7 @@ class Aluno
         if ($this->cursos->contains($curso)) {
             return $this;
         }
+
         $this->cursos->add($curso);
         $curso->addAluno($this);
         return $this;
