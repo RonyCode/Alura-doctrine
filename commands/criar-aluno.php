@@ -15,7 +15,8 @@ $aluno->setName($argv[1]);
 for ($i = 2; $i < $argc; $i++) {
     $numeroTelefone = $argv[$i];
     $telefone = new Telefone();
-    $telefone->getNumero($numeroTelefone);
+    $telefone->setNumero($numeroTelefone);
+
     $aluno->addTelefone($telefone);
 }
 
